@@ -1,7 +1,0 @@
-{
-  "interaction": {
-    "type": "script-directory",
-    "path": "/sdcard/FridaInstaller/frida_scripts/",
-    "on_change": "rescan"
-  }
-}

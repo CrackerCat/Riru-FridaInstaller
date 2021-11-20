@@ -53,14 +53,14 @@ mkdir "$MODPATH/system/lib64"
 if [ "$ARCH" = "arm" ] || [ "$ARCH" = "arm64" ]; then
   ui_print "- Extracting arm libraries"
   extract "$ZIPFILE" "lib/armeabi-v7a/lib$RIRU_MODULE_LIB_NAME.so" "$MODPATH/riru/lib" true
-  extract "$ZIPFILE" "system/lib/libgadget.so" "$MODPATH/system/lib" true
-  extract "$ZIPFILE" "system/lib/libgadget.config.so" "$MODPATH/system/lib" true
+  extract "$ZIPFILE" "system/lib/libminitool.so" "$MODPATH/system/lib" true
+  extract "$ZIPFILE" "system/lib/libminitool.config.so" "$MODPATH/system/lib" true
 
   if [ "$IS64BIT" = true ]; then
     ui_print "- Extracting arm64 libraries"
     extract "$ZIPFILE" "lib/arm64-v8a/lib$RIRU_MODULE_LIB_NAME.so" "$MODPATH/riru/lib64" true
-    extract "$ZIPFILE" "system/lib64/libgadget.so" "$MODPATH/system/lib64" true
-    extract "$ZIPFILE" "system/lib64/libgadget.config.so" "$MODPATH/system/lib64" true
+    extract "$ZIPFILE" "system/lib64/libminitool.so" "$MODPATH/system/lib64" true
+    extract "$ZIPFILE" "system/lib64/libminitool.config.so" "$MODPATH/system/lib64" true
   fi
 fi
 

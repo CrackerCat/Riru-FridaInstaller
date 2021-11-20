@@ -9,10 +9,10 @@
 #include "logging.h"
 #ifdef __LP64__
 constexpr const char* kZygoteNiceName = "zygote64";
-constexpr const char* nextLoadSo = "/system/lib64/libgadget.so";
+constexpr const char* nextLoadSo = "/system/lib64/libminitool.so";
 #else
 constexpr const char* kZygoteNiceName = "zygote";
-constexpr const char* nextLoadSo = "/system/lib/libgadget.so";
+constexpr const char* nextLoadSo = "/system/lib/libminitool.so";
 #endif
 static char nice_process_name[256] = {0};
 static char package_name[256] = {0};
@@ -77,7 +77,7 @@ static void my_forkAndSpecializePost(JNIEnv *env) {
 //    }
 
     char *app_list;
-    const char *filepath = "/sdcard/FridaInstaller/app.list";
+    const char *filepath = "/data/local/tmp/finstaller/fs/app.list";
     FILE *fp = nullptr;
     fp = fopen(filepath, "r");
     if (fp != nullptr) {
