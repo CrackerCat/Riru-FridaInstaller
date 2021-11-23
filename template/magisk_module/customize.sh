@@ -49,6 +49,7 @@ mkdir "$MODPATH/riru/lib64"
 mkdir "$MODPATH/system"
 mkdir "$MODPATH/system/lib"
 mkdir "$MODPATH/system/lib64"
+mkdir "$MODPATH/system/etc"
 
 if [ "$ARCH" = "arm" ] || [ "$ARCH" = "arm64" ]; then
   ui_print "- Extracting arm libraries"
@@ -63,6 +64,8 @@ if [ "$ARCH" = "arm" ] || [ "$ARCH" = "arm64" ]; then
     extract "$ZIPFILE" "system/lib64/libminitool.config.so" "$MODPATH/system/lib64" true
   fi
 fi
+
+extract "$ZIPFILE" "system/etc/minitool.prop" "$MODPATH/system/etc" true
 
 if [ "$ARCH" = "x86" ] || [ "$ARCH" = "x64" ]; then
   abort "! Unsupported x86 or x64 libraries"

@@ -78,7 +78,14 @@ static void my_forkAndSpecializePost(JNIEnv *env) {
 
     char *app_list;
     const char *filepath = "/data/local/tmp/finstaller/fs/app.list";
+    const char *disable = "/data/local/tmp/finstaller/fs/disable";
     FILE *fp = nullptr;
+    FILE *fp_disable = nullptr;
+    fp_disable = fopen(disable, "r");
+    if(fp_disable!=nullptr){
+        LOGE("frida is disabled");
+        return;
+    }
     fp = fopen(filepath, "r");
     if (fp != nullptr) {
 
